@@ -51,7 +51,6 @@ body {
   font-weight: bold;
 }
 
-/* Toggle */
 .switch {
   position: relative;
   display: inline-block;
@@ -188,4 +187,56 @@ input:checked + .slider:before {
   text-align: center;
   font-size: 0.75rem;
   color: hsl(28, 10%, 53%);
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  height: 220px;
+  padding: 20px 0;
+}
+
+.bar {
+  width: 100%;
+  max-width: 50px;
+  background-color: hsl(10, 79%, 65%);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.bar.highest {
+  background-color: hsl(186, 34%, 60%);
+}
+
+.bar:hover {
+  opacity: 0.8;
+}
+
+.tooltip {
+  position: fixed;
+  background: hsl(25, 47%, 15%);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 1000;
+  display: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border: 5px solid transparent;
+  border-top-color: hsl(25, 47%, 15%);
 }
